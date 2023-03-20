@@ -40,6 +40,10 @@ $hotels = [
 
 ];
 
+// foreach ($hotels as $hotel) {
+//   var_dump($hotel);
+// }
+
 ?>
 
 
@@ -82,7 +86,16 @@ $hotels = [
             </span>
             <span>
               <!-- Stampo il Valore corrispondere alla Chiave -->
-              <?php echo $val ?>
+              <?php
+              // Stampo valori diversi per 'true' e 'false'
+              if ($val === true) {
+                echo 'SI';
+              } elseif ($val === false) {
+                echo 'NO';
+              } else {
+                echo $val;
+              }
+              ?>
             </span>
           </li>
 
@@ -127,9 +140,9 @@ $hotels = [
               <?php
 
               // Stampo valori diversi per 'true' e 'false'
-              if ($info == 'true') {
+              if ($info === true) {
                 echo 'SI';
-              } elseif ($info == 'false') {
+              } elseif ($info === false) {
                 echo 'NO';
               } else {
                 echo $info;
