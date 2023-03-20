@@ -144,10 +144,8 @@ $hotels = [
 
                 if ($hotel['parking'] === true) {
                   echo 'SI';
-                } elseif ($hotel['parking'] === false) {
-                  echo 'NO';
                 } else {
-                  echo $hotel['parking'];
+                  echo 'NO';
                 }
 
                 ?>
