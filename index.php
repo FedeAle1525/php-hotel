@@ -102,6 +102,37 @@ $hotels = [
 
   <h2 class="text-center mt-5 pb-3">Versione Con Tabella</h2>
 
+  <table class="table w-75 text-center">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Descrizione</th>
+        <th>Parcheggio</th>
+        <th>Voto</th>
+        <th>Distanza dal Centro (km)</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <?php
+      foreach ($hotels as $hotel) {
+      ?>
+        <tr>
+          <?php
+          foreach ($hotel as $info) {
+          ?>
+            <td> <?php echo $info ?></td>
+          <?php
+          }
+          ?>
+        </tr>
+      <?php
+      }
+      ?>
+    </tbody>
+
+  </table>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
