@@ -58,37 +58,49 @@ $hotels = [
 
 <body>
 
+  <!-- 1 - STAMPO DATI IN PAGINA CON LISTE -->
+  <h2 class="text-center py-3">Versione Con Lista</h2>
 
-  <?php
+  <div class="d-flex">
 
-  // Stampo in pagina ogni Array di Hotel
-  foreach ($hotels as $hotel) {
-  ?>
-    <ul>
-      <?php
+    <?php
 
-      foreach ($hotel as $key => $val) {
-      ?>
+    // Stampo in pagina ogni Array di Hotel
+    foreach ($hotels as $hotel) {
+    ?>
+      <ul>
+        <?php
 
-        <li>
-          <span>
-            <strong><?php echo $key ?>: </strong>
-          </span>
-          <span>
-            <?php echo $val ?>
-          </span>
-        </li>
+        // Stampo il contenuto di ogni Array di Hotel in una Lista
+        foreach ($hotel as $key => $val) {
+        ?>
 
-      <?php
-      };
+          <li>
+            <span>
+              <!-- Stampo la Chiave -->
+              <strong><?php echo $key ?>: </strong>
+            </span>
+            <span>
+              <!-- Stampo il Valore corrispondere alla Chiave -->
+              <?php echo $val ?>
+            </span>
+          </li>
 
-      ?>
+        <?php
+        };
 
-    </ul>
+        ?>
 
-  <?php
-  };
-  ?>
+      </ul>
+
+    <?php
+    };
+    ?>
+  </div>
+
+  <!-- 2 - STAMPO I DATI IN PAGINA CON TABELLA -->
+
+  <h2 class="text-center mt-5 pb-3">Versione Con Tabella</h2>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
