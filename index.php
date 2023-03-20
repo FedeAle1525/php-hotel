@@ -115,13 +115,28 @@ $hotels = [
 
     <tbody>
       <?php
+      // Stampo una RIGA ogni Array di Hotel
       foreach ($hotels as $hotel) {
       ?>
         <tr>
           <?php
+          // Stampo il contenuto di ogni Array di Hotel nelle COLONNE
           foreach ($hotel as $info) {
           ?>
-            <td> <?php echo $info ?></td>
+            <td>
+              <?php
+
+              // Stampo valori diversi per 'true' e 'false'
+              if ($info == 'true') {
+                echo 'SI';
+              } elseif ($info == 'false') {
+                echo 'NO';
+              } else {
+                echo $info;
+              }
+
+              ?>
+            </td>
           <?php
           }
           ?>
