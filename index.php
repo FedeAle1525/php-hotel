@@ -115,6 +115,12 @@ $hotels = [
 
   <h2 class="text-center mt-5 pb-3">Versione Con Tabella</h2>
 
+  <form action="" method="get">
+    <span class="text-decoration-underline me-1">Disponibilita' Parcheggio:</span>
+    <span class="me-1">SI</span><input type="radio" name="parking" value="si">
+    <span class="me-1">NO</span><input type="radio" name="parking" value="no" checked>
+  </form>
+
   <table class="table w-75 text-center">
     <thead>
       <tr>
@@ -132,27 +138,22 @@ $hotels = [
       foreach ($hotels as $hotel) {
       ?>
         <tr>
-          <?php
-          // Stampo il contenuto di ogni Array di Hotel nelle COLONNE
-          foreach ($hotel as $info) {
-          ?>
-            <td>
-              <?php
+          <td> <?php echo $hotel['name'] ?> </td>
+          <td> <?php echo $hotel['description'] ?> </td>
+          <td> <?php
 
-              // Stampo valori diversi per 'true' e 'false'
-              if ($info === true) {
-                echo 'SI';
-              } elseif ($info === false) {
-                echo 'NO';
-              } else {
-                echo $info;
-              }
+                if ($hotel['parking'] === true) {
+                  echo 'SI';
+                } elseif ($hotel['parking'] === false) {
+                  echo 'NO';
+                } else {
+                  echo $hotel['parking'];
+                }
 
-              ?>
-            </td>
-          <?php
-          }
-          ?>
+                ?>
+          </td>
+          <td> <?php echo $hotel['vote'] ?> </td>
+          <td> <?php echo $hotel['distance_to_center'] ?> </td>
         </tr>
       <?php
       }
